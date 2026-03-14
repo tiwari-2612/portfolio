@@ -12,75 +12,136 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
 <style>
 
 body{
 font-family:Inter;
-color:white;
 background: radial-gradient(circle at top,#0f172a 0%,#020617 70%);
-min-height:100vh;
+color:white;
+scroll-behavior:smooth;
 }
 
-/* sections */
+/* layout */
 
 .section{
-max-width:1000px;
+max-width:1100px;
 margin:auto;
 padding:90px 20px;
+}
+
+/* navbar */
+
+.nav{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,.4);
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(255,255,255,.05);
+z-index:50;
+}
+
+.nav-inner{
+max-width:1100px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:14px 20px;
+}
+
+.nav a{
+color:#cbd5f5;
+margin-left:18px;
+font-size:14px;
+}
+
+.nav a:hover{
+color:white;
+}
+
+/* hero */
+
+.hero{
+display:flex;
+flex-wrap:wrap;
+align-items:center;
+gap:40px;
+justify-content:center;
+}
+
+.hero img{
+width:240px;
+border-radius:20px;
+box-shadow:0 20px 60px rgba(0,0,0,.7);
 }
 
 /* cards */
 
 .card{
 background:rgba(15,27,46,0.65);
-backdrop-filter:blur(10px);
+backdrop-filter:blur(12px);
 border-radius:18px;
 padding:28px;
-border:1px solid rgba(255,255,255,0.05);
-transition:all .35s ease;
+border:1px solid rgba(255,255,255,.05);
+transition:.35s;
 }
 
 .card:hover{
-transform:translateY(-8px);
-box-shadow:0 20px 50px rgba(0,0,0,0.7);
-border-color:rgba(59,130,246,0.35);
+transform:translateY(-6px);
+box-shadow:0 20px 50px rgba(0,0,0,.7);
 }
 
-/* certificates */
+/* grid */
 
-.cert{
-width:100%;
-height:230px;
-object-fit:contain;
-border-radius:12px;
-margin-top:15px;
-background:#0a1426;
-padding:10px;
-transition:.3s;
-cursor:pointer;
-}
-
-.cert:hover{
-transform:scale(1.05);
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:24px;
 }
 
 /* buttons */
 
-.doi{
-margin-top:15px;
+.btn{
 display:inline-block;
+margin-top:18px;
 background:linear-gradient(135deg,#2563eb,#4f46e5);
-padding:9px 16px;
+padding:10px 18px;
 border-radius:10px;
 font-size:14px;
-transition:.25s;
 }
 
-.doi:hover{
-transform:scale(1.05);
-box-shadow:0 10px 25px rgba(37,99,235,0.5);
+/* certificate */
+
+.cert{
+width:100%;
+height:220px;
+object-fit:contain;
+background:#0a1426;
+padding:10px;
+border-radius:12px;
+cursor:pointer;
+}
+
+/* modal */
+
+#modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.9);
+align-items:center;
+justify-content:center;
+z-index:100;
+}
+
+#modal img{
+max-width:90%;
+max-height:90%;
+border-radius:10px;
 }
 
 </style>
@@ -89,88 +150,73 @@ box-shadow:0 10px 25px rgba(37,99,235,0.5);
 
 <body>
 
-
 <!-- NAVBAR -->
 
-<nav class="fixed top-0 w-full backdrop-blur-md bg-black/40 border-b border-white/5 z-50">
+<div class="nav">
 
-<div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-3">
+<div class="nav-inner">
 
-<span class="font-semibold text-lg">Utkarsh</span>
+<b>Utkarsh</b>
 
-<!-- Hamburger button -->
-<button id="menu-btn" class="md:hidden text-2xl">
-☰
-</button>
+<div class="hidden md:block">
 
-<!-- Desktop Menu -->
-<div class="hidden md:flex space-x-6 text-sm text-gray-300">
-
-<a href="#research" class="hover:text-white">Research</a>
-<a href="#certifications" class="hover:text-white">Certifications</a>
-<a href="#poetry" class="hover:text-white">Poetry</a>
-<a href="#contact" class="hover:text-white">Contact</a>
-<a href="https://sanchayutkarsh.blogspot.com/" target="_blank" class="hover:text-white">Poetry Blog</a>
+<a href="#about">About</a>
+<a href="#research">Research</a>
+<a href="#certifications">Certifications</a>
+<a href="#poetry">Poetry</a>
+<a href="#contact">Contact</a>
 
 </div>
 
 </div>
 
-<!-- Mobile Menu -->
-<div id="mobile-menu" class="hidden flex-col text-center text-gray-300 pb-4 md:hidden">
-
-<a href="#research" class="py-2 hover:text-white">Research</a>
-<a href="#certifications" class="py-2 hover:text-white">Certifications</a>
-<a href="#poetry" class="py-2 hover:text-white">Poetry</a>
-<a href="#contact" class="py-2 hover:text-white">Contact</a>
-<a href="https://sanchayutkarsh.blogspot.com/" target="_blank" class="py-2 hover:text-white">Poetry Blog</a>
-
 </div>
-
-</nav>
 
 
 <!-- HERO -->
 
-<section class="section flex justify-center pt-32" data-aos="fade-up">
+<section class="section hero" style="padding-top:140px">
 
-<div class="card text-center max-w-3xl py-12 px-10">
+<img src="me.jpg">
 
-<h1 class="text-6xl font-bold mb-6 tracking-tight">
+<div style="max-width:520px">
+
+<h1 class="text-5xl font-bold mb-4">
 Utkarsh
 </h1>
 
-<p class="text-gray-400 text-lg mb-4">
-Software Engineer | DevOps | Cloud | AR/VR | Research Author | Poet
+<p class="text-gray-400 mb-3">
+Software Engineer • DevOps • Cloud • AR/VR • Research Author • Poet
 </p>
 
-<p class="text-gray-400 leading-relaxed">
-DevOps and cloud enthusiast focused on building scalable systems and microservice architectures, author of multiple research publications in cloud optimization, and exploring emerging technologies including Augmented Reality.
+<p class="text-gray-400">
+DevOps and cloud enthusiast focused on building scalable systems and
+microservice architectures. Author of multiple research publications and
+explorer of emerging technologies including Augmented Reality.
 </p>
+
+<a href="cv.pdf" download class="btn">
+Download CV
+</a>
 
 </div>
 
 </section>
 
 
-<!-- INDEPENDENT STUDY -->
+<!-- ABOUT -->
 
-<section class="section flex justify-center" data-aos="fade-up">
+<section id="about" class="section">
 
-<div class="max-w-3xl">
-
-<h2 class="text-3xl font-semibold mb-8">
+<h2 class="text-3xl mb-6">
 Independent Study & Skill Development
 </h2>
 
 <div class="card">
 
-<p class="text-gray-400">
-Since January 2025, I have been focusing on structured independent learning aimed at long-term skill development. This period is helping me to strengthen my analytical thinking, research capabilities, and systematic approach to problem solving.
-
-</p>
-
-</div>
+Since January 2025 I have focused on structured independent learning and
+research aimed at long term skill development. This period strengthened
+analytical thinking, research capabilities and systematic problem solving.
 
 </div>
 
@@ -179,29 +225,23 @@ Since January 2025, I have been focusing on structured independent learning aime
 
 <!-- RESEARCH -->
 
-<section id="research" class="section" data-aos="fade-up">
+<section id="research" class="section">
 
-<h2 class="text-3xl font-semibold mb-10">
+<h2 class="text-3xl mb-8">
 Research Publications
 </h2>
 
-<div class="grid md:grid-cols-2 gap-8">
+<div class="grid">
 
 <div class="card">
 
-<h3 class="text-xl font-semibold">
+<h3 class="text-blue-400">
 Dynamic Container Optimization for Efficient Microservices Deployment
 </h3>
 
-<p class="text-gray-400 mt-2">
-IEEE | 2024
-</p>
+<p class="text-gray-400">IEEE • 2024</p>
 
-<p class="text-gray-400 mt-4">
-Technique to optimise container pairing and improve resource utilisation for cloud based microservice deployments.
-</p>
-
-<a href="https://doi.org/10.1109/ICEECT61758.2024.10739185" class="doi" target="_blank">
+<a href="https://doi.org/10.1109/ICEECT61758.2024.10739185" target="_blank" class="btn">
 View Paper
 </a>
 
@@ -210,19 +250,13 @@ View Paper
 
 <div class="card">
 
-<h3 class="text-xl font-semibold">
+<h3 class="text-blue-400">
 Optimizing Cloud Applications with DevOps
 </h3>
 
-<p class="text-gray-400 mt-2">
-IEEE | 2024
-</p>
+<p class="text-gray-400">IEEE • 2024</p>
 
-<p class="text-gray-400 mt-4">
-Focus on CI/CD pipelines, Docker containerisation, and automated deployment.
-</p>
-
-<a href="https://doi.org/10.1109/iccica60014.2024.10584904" class="doi" target="_blank">
+<a href="https://doi.org/10.1109/iccica60014.2024.10584904" target="_blank" class="btn">
 View Paper
 </a>
 
@@ -231,19 +265,13 @@ View Paper
 
 <div class="card">
 
-<h3 class="text-xl font-semibold">
+<h3 class="text-blue-400">
 IoT Based Smart Home Automation
 </h3>
 
-<p class="text-gray-400 mt-2">
-Springer | 2024
-</p>
+<p class="text-gray-400">Springer • 2024</p>
 
-<p class="text-gray-400 mt-4">
-Design of IoT architecture enabling smart home automation and monitoring.
-</p>
-
-<a href="https://doi.org/10.1007/978-981-99-8661-3_28" class="doi" target="_blank">
+<a href="https://doi.org/10.1007/978-981-99-8661-3_28" target="_blank" class="btn">
 View Paper
 </a>
 
@@ -252,19 +280,13 @@ View Paper
 
 <div class="card">
 
-<h3 class="text-xl font-semibold">
+<h3 class="text-blue-400">
 Intelligent Optimization Techniques in Business Analytics
 </h3>
 
-<p class="text-gray-400 mt-2">
-IGI Global | 2024
-</p>
+<p class="text-gray-400">IGI Global • 2024</p>
 
-<p class="text-gray-400 mt-4">
-Exploration of optimisation algorithms integrated with modern data analytics.
-</p>
-
-<a href="https://doi.org/10.4018/979-8-3693-1598-9.ch001" class="doi" target="_blank">
+<a href="https://doi.org/10.4018/979-8-3693-1598-9.ch001" target="_blank" class="btn">
 View Paper
 </a>
 
@@ -277,13 +299,13 @@ View Paper
 
 <!-- CERTIFICATIONS -->
 
-<section id="certifications" class="section" data-aos="fade-up">
+<section id="certifications" class="section">
 
-<h2 class="text-3xl font-semibold mb-10">
+<h2 class="text-3xl mb-8">
 Certifications
 </h2>
 
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="grid">
 
 <div class="card">
 <h3>AWS Fargate Certification</h3>
@@ -308,10 +330,12 @@ Certifications
 <div class="card">
 <h3>Google Cloud Skills Profile</h3>
 <img src="gcop.png" class="cert">
+
 <a href="https://www.skills.google/public_profiles/ee747e8c-675f-4d44-9e05-d6a399c62675"
-class="doi" target="_blank">
-View Google Cloud Profile
+class="btn" target="_blank">
+View Profile
 </a>
+
 </div>
 
 </div>
@@ -321,20 +345,13 @@ View Google Cloud Profile
 
 <!-- POETRY -->
 
-<section id="poetry" class="section" data-aos="fade-up">
+<section id="poetry" class="section">
 
-<h2 class="text-3xl font-semibold mb-4">
+<h2 class="text-3xl mb-8">
 Poetry & Literary Achievements
 </h2>
 
-<p class="text-gray-400 mb-8">
-I also write Hindi poetry on my blog 
-<a href="https://sanchayutkarsh.blogspot.com/" target="_blank" class="text-blue-400 hover:underline">
-संचय
-</a>.
-</p>
-
-<div class="grid md:grid-cols-2 gap-8">
+<div class="grid">
 
 <div class="card">
 <h3>33rd Rank National Poetry Contest</h3>
@@ -347,23 +364,29 @@ I also write Hindi poetry on my blog
 </div>
 
 <div class="card">
-<h3>First Position University Poem Recitation</h3>
+<h3>First Position University Recitation</h3>
 <img src="poetry1.jpeg" class="cert">
 </div>
 
 <div class="card">
-<h3>Second Position University Poem Recitation</h3>
+<h3>Second Position University Recitation</h3>
 <img src="poetry2.jpeg" class="cert">
 </div>
 
 </div>
+
+<br>
+
+<a href="https://sanchayutkarsh.blogspot.com/" target="_blank" class="btn">
+Visit My Poetry Blog
+</a>
 
 </section>
 
 
 <!-- CONTACT -->
 
-<section id="contact" class="section text-center" data-aos="fade-up">
+<section id="contact" class="section text-center">
 
 <h2 class="text-3xl mb-6">
 Contact
@@ -371,14 +394,14 @@ Contact
 
 <p class="text-gray-400">
 Email:
-<a href="mailto:uttu3101@gmail.com" class="text-blue-400 hover:underline">
+<a href="mailto:uttu3101@gmail.com" class="text-blue-400">
 uttu3101@gmail.com
 </a>
 </p>
 
 <p class="text-gray-400 mt-2">
-LinkedIn: 
-<a href="https://linkedin.com/in/utkarsh-tiwari-930642211" target="_blank" class="text-blue-400 hover:underline">
+LinkedIn:
+<a href="https://linkedin.com/in/utkarsh-tiwari-930642211" target="_blank" class="text-blue-400">
 linkedin.com/in/utkarsh-tiwari-930642211
 </a>
 </p>
@@ -393,56 +416,33 @@ linkedin.com/in/utkarsh-tiwari-930642211
 
 <!-- IMAGE MODAL -->
 
-<div id="modal"
-style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;
-background:rgba(0,0,0,0.9);align-items:center;justify-content:center;z-index:999;">
+<div id="modal">
 
-<img id="modal-img" style="max-width:90%;max-height:90%;border-radius:12px;">
+<img id="modal-img">
 
 </div>
 
-
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
 <script>
 
-AOS.init({
-duration:900,
-once:true
-});
-
-const modal = document.getElementById("modal");
-const modalImg = document.getElementById("modal-img");
+const modal=document.getElementById("modal");
+const modalImg=document.getElementById("modal-img");
 
 document.querySelectorAll(".cert").forEach(img=>{
+
 img.onclick=()=>{
+
 modal.style.display="flex";
 modalImg.src=img.src;
+
 };
+
 });
 
 modal.onclick=()=>{
+
 modal.style.display="none";
+
 };
-
- </script>
-  
-<script>
-
-const btn = document.getElementById("menu-btn");
-const menu = document.getElementById("mobile-menu");
-
-btn.addEventListener("click", () => {
-
-if(menu.classList.contains("hidden")){
-menu.classList.remove("hidden");
-menu.classList.add("flex");
-}else{
-menu.classList.remove("flex");
-menu.classList.add("hidden");
-}
-
-});
 
 </script>
 
