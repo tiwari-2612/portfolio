@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Utkarsh | Portfolio</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+
+body{
+font-family:Inter;
+color:white;
+background: radial-gradient(circle at top,#0f172a 0%,#020617 70%);
+min-height:100vh;
+}
+
+/* sections */
+
+.section{
+max-width:1000px;
+margin:auto;
+padding:90px 20px;
+}
+
+/* cards */
+
+.card{
+background:rgba(15,27,46,0.65);
+backdrop-filter:blur(10px);
+border-radius:18px;
+padding:28px;
+border:1px solid rgba(255,255,255,0.05);
+transition:all .35s ease;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 50px rgba(0,0,0,0.7);
+border-color:rgba(59,130,246,0.35);
+}
+
+/* certificates */
+
+.cert{
+width:100%;
+height:230px;
+object-fit:contain;
+border-radius:12px;
+margin-top:15px;
+background:#0a1426;
+padding:10px;
+transition:.3s;
+cursor:pointer;
+}
+
+.cert:hover{
+transform:scale(1.05);
+}
+
+/* buttons */
+
+.doi{
+margin-top:15px;
+display:inline-block;
+background:linear-gradient(135deg,#2563eb,#4f46e5);
+padding:9px 16px;
+border-radius:10px;
+font-size:14px;
+transition:.25s;
+}
+
+.doi:hover{
+transform:scale(1.05);
+box-shadow:0 10px 25px rgba(37,99,235,0.5);
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<nav class="fixed top-0 w-full backdrop-blur-md bg-black/40 border-b border-white/5 z-50">
+
+<div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-3">
+
+<span class="font-semibold text-lg">Utkarsh</span>
+
+<div class="space-x-6 text-sm text-gray-300">
+
+<a href="#research" class="hover:text-white">Research</a>
+<a href="#certifications" class="hover:text-white">Certifications</a>
+<a href="#poetry" class="hover:text-white">Poetry</a>
+<a href="#contact" class="hover:text-white">Contact</a>
+<a href="https://sanchayutkarsh.blogspot.com/" target="_blank" class="hover:text-white">Poetry Blog</a>
+
+</div>
+
+</div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="section flex justify-center pt-32" data-aos="fade-up">
+
+<div class="card text-center max-w-3xl py-12 px-10">
+
+<h1 class="text-6xl font-bold mb-6 tracking-tight">
+Utkarsh
+</h1>
+
+<p class="text-gray-400 text-lg mb-4">
+Software Engineer | DevOps | Cloud | AR/VR | Research Author | Poet
+</p>
+
+<p class="text-gray-400 leading-relaxed">
+DevOps and cloud enthusiast focused on building scalable systems and microservice architectures, author of multiple research publications in cloud optimization, and exploring emerging technologies including Augmented Reality.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- INDEPENDENT STUDY -->
+
+<section class="section flex justify-center" data-aos="fade-up">
+
+<div class="max-w-3xl">
+
+<h2 class="text-3xl font-semibold mb-8">
+Independent Study & Skill Development
+</h2>
+
+<div class="card">
+
+<p class="text-gray-400">
+Since January 2025, I have focused on structured independent learning and research aimed at long term skill development. This period has strengthened my analytical thinking, research capabilities, and systematic approach to problem solving.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- RESEARCH -->
+
+<section id="research" class="section" data-aos="fade-up">
+
+<h2 class="text-3xl font-semibold mb-10">
+Research Publications
+</h2>
+
+<div class="grid md:grid-cols-2 gap-8">
+
+<div class="card">
+
+<h3 class="text-xl font-semibold">
+Dynamic Container Optimization for Efficient Microservices Deployment
+</h3>
+
+<p class="text-gray-400 mt-2">
+IEEE | 2024
+</p>
+
+<p class="text-gray-400 mt-4">
+Technique to optimise container pairing and improve resource utilisation for cloud based microservice deployments.
+</p>
+
+<a href="https://doi.org/10.1109/ICEECT61758.2024.10739185" class="doi" target="_blank">
+View Paper
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h3 class="text-xl font-semibold">
+Optimizing Cloud Applications with DevOps
+</h3>
+
+<p class="text-gray-400 mt-2">
+IEEE | 2024
+</p>
+
+<p class="text-gray-400 mt-4">
+Focus on CI/CD pipelines, Docker containerisation, and automated deployment.
+</p>
+
+<a href="https://doi.org/10.1109/iccica60014.2024.10584904" class="doi" target="_blank">
+View Paper
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h3 class="text-xl font-semibold">
+IoT Based Smart Home Automation
+</h3>
+
+<p class="text-gray-400 mt-2">
+Springer | 2024
+</p>
+
+<p class="text-gray-400 mt-4">
+Design of IoT architecture enabling smart home automation and monitoring.
+</p>
+
+<a href="https://doi.org/10.1007/978-981-99-8661-3_28" class="doi" target="_blank">
+View Paper
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h3 class="text-xl font-semibold">
+Intelligent Optimization Techniques in Business Analytics
+</h3>
+
+<p class="text-gray-400 mt-2">
+IGI Global | 2024
+</p>
+
+<p class="text-gray-400 mt-4">
+Exploration of optimisation algorithms integrated with modern data analytics.
+</p>
+
+<a href="https://doi.org/10.4018/979-8-3693-1598-9.ch001" class="doi" target="_blank">
+View Paper
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CERTIFICATIONS -->
+
+<section id="certifications" class="section" data-aos="fade-up">
+
+<h2 class="text-3xl font-semibold mb-10">
+Certifications
+</h2>
+
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+<div class="card">
+<h3>AWS Fargate Certification</h3>
+<img src="aws.jpg" class="cert">
+</div>
+
+<div class="card">
+<h3>Augmented Reality Development</h3>
+<img src="ar.jpg" class="cert">
+</div>
+
+<div class="card">
+<h3>Full Stack Development</h3>
+<img src="fullstack.jpg" class="cert">
+</div>
+
+<div class="card">
+<h3>NPTEL Ethics in Engineering</h3>
+<img src="nptel.jpg" class="cert">
+</div>
+
+<div class="card">
+<h3>Google Cloud Skills Profile</h3>
+<img src="gcop.png" class="cert">
+<a href="https://www.skills.google/public_profiles/ee747e8c-675f-4d44-9e05-d6a399c62675"
+class="doi" target="_blank">
+View Google Cloud Profile
+</a>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- POETRY -->
+
+<section id="poetry" class="section" data-aos="fade-up">
+
+<h2 class="text-3xl font-semibold mb-4">
+Poetry & Literary Achievements
+</h2>
+
+<p class="text-gray-400 mb-8">
+I also write Hindi poetry on my blog 
+<a href="https://sanchayutkarsh.blogspot.com/" target="_blank" class="text-blue-400 hover:underline">
+संचय
+</a>.
+</p>
+
+<div class="grid md:grid-cols-2 gap-8">
+
+<div class="card">
+<h3>33rd Rank National Poetry Contest</h3>
+<img src="poetry33.jpeg" class="cert">
+</div>
+
+<div class="card">
+<h3>45th Rank National Poetry Contest</h3>
+<img src="poetry45.jpeg" class="cert">
+</div>
+
+<div class="card">
+<h3>First Position University Poem Recitation</h3>
+<img src="poetry1.jpeg" class="cert">
+</div>
+
+<div class="card">
+<h3>Second Position University Poem Recitation</h3>
+<img src="poetry2.jpeg" class="cert">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="section text-center" data-aos="fade-up">
+
+<h2 class="text-3xl mb-6">
+Contact
+</h2>
+
+<p class="text-gray-400">
+Email:
+<a href="mailto:uttu3101@gmail.com" class="text-blue-400 hover:underline">
+uttu3101@gmail.com
+</a>
+</p>
+
+<p class="text-gray-400 mt-2">
+LinkedIn: 
+<a href="https://linkedin.com/in/utkarsh-tiwari-930642211" target="_blank" class="text-blue-400 hover:underline">
+linkedin.com/in/utkarsh-tiwari-930642211
+</a>
+</p>
+
+</section>
+
+
+<footer class="text-center pb-10 text-gray-500">
+© 2026 Utkarsh
+</footer>
+
+
+<!-- IMAGE MODAL -->
+
+<div id="modal"
+style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;
+background:rgba(0,0,0,0.9);align-items:center;justify-content:center;z-index:999;">
+
+<img id="modal-img" style="max-width:90%;max-height:90%;border-radius:12px;">
+
+</div>
+
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+
+AOS.init({
+duration:900,
+once:true
+});
+
+const modal = document.getElementById("modal");
+const modalImg = document.getElementById("modal-img");
+
+document.querySelectorAll(".cert").forEach(img=>{
+img.onclick=()=>{
+modal.style.display="flex";
+modalImg.src=img.src;
+};
+});
+
+modal.onclick=()=>{
+modal.style.display="none";
+};
+
+</script>
+
+
+</body>
+</html>
