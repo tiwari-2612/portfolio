@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Utkarsh | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+font-family:'Inter',sans-serif;
+margin:0;
+color:white;
+background:linear-gradient(-45deg,#020617,#0f172a,#1e293b,#020617);
+background-size:400% 400%;
+animation:bgMove 12s ease infinite;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.nav{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,.6);
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(255,255,255,.05);
+z-index:100;
+}
+
+.nav-inner{
+max-width:1100px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:14px 20px;
+}
+
+.nav a{
+color:#cbd5f5;
+text-decoration:none;
+margin-left:18px;
+font-size:14px;
+cursor:pointer;
+}
+
+.nav a:hover{color:white}
+
+.section{
+max-width:1100px;
+margin:auto;
+padding:120px 20px 80px;
+}
+
+.hero{
+display:flex;
+flex-wrap:wrap;
+gap:40px;
+align-items:center;
+justify-content:center;
+}
+
+.hero img{
+width:260px;
+border-radius:50%;
+box-shadow:0 0 60px rgba(37,99,235,.6);
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+background:linear-gradient(135deg,#2563eb,#4f46e5);
+padding:12px 20px;
+border-radius:10px;
+text-decoration:none;
+color:white;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+box-shadow:0 10px 25px rgba(37,99,235,.6);
+}
+
+.card{
+background:rgba(15,27,46,.65);
+backdrop-filter:blur(14px);
+border-radius:18px;
+padding:25px;
+border:1px solid rgba(255,255,255,.05);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 60px rgba(0,0,0,.8);
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.cert{
+width:100%;
+height:220px;
+object-fit:contain;
+background:#0a1426;
+padding:10px;
+border-radius:12px;
+cursor:pointer;
+}
+
+.page{display:none}
+
+#modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.9);
+align-items:center;
+justify-content:center;
+z-index:999;
+}
+
+#modal img{
+max-width:90%;
+max-height:90%;
+border-radius:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<div class="nav">
+<div class="nav-inner">
+<b>Utkarsh</b>
+<div>
+<a onclick="showPage('home')">Home</a>
+<a onclick="showPage('about')">About</a>
+<a onclick="showPage('research')">Research</a>
+<a onclick="showPage('certifications')">Certifications</a>
+<a onclick="showPage('poetry')">Poetry</a>
+<a onclick="showPage('contact')">Contact</a>
+</div>
+</div>
+</div>
+
+<!-- HOME -->
+
+<section id="home" class="page section hero">
+
+<img src="me.jpg">
+
+<div>
+
+<h1 style="font-size:42px">Utkarsh</h1>
+
+<p>
+Software Engineer • DevOps • Cloud • AR/VR • Research Author • Poet
+</p>
+
+<p>
+DevOps enthusiast building scalable cloud systems and microservice architectures while publishing research and exploring emerging technologies.
+</p>
+
+<a href="cv.pdf" class="btn" download>
+Download CV
+</a>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="page section">
+
+<h2>Independent Study & Skill Development</h2>
+
+<div class="card">
+
+Since January 2025 I have focused on structured independent learning and research aimed at long term skill development. This period strengthened analytical thinking, research capabilities and systematic problem solving.
+
+</div>
+
+</section>
+
+<!-- RESEARCH -->
+
+<section id="research" class="page section">
+
+<h2>Research Publications</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Dynamic Container Optimization</h3>
+<p>IEEE • 2024</p>
+<a href="https://doi.org/10.1109/ICEECT61758.2024.10739185" class="btn">View Paper</a>
+</div>
+
+<div class="card">
+<h3>Optimizing Cloud Applications with DevOps</h3>
+<p>IEEE • 2024</p>
+<a href="https://doi.org/10.1109/iccica60014.2024.10584904" class="btn">View Paper</a>
+</div>
+
+<div class="card">
+<h3>IoT Smart Home Automation</h3>
+<p>Springer • 2024</p>
+<a href="https://doi.org/10.1007/978-981-99-8661-3_28" class="btn">View Paper</a>
+</div>
+
+<div class="card">
+<h3>Optimization Techniques in Business Analytics</h3>
+<p>IGI Global • 2024</p>
+<a href="https://doi.org/10.4018/979-8-3693-1598-9.ch001" class="btn">View Paper</a>
+</div>
+
+</div>
+
+</section>
+
+<!-- CERTIFICATIONS -->
+
+<section id="certifications" class="page section">
+
+<h2>Certifications</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>AWS Fargate</h3>
+<img src="aws.jpg" class="cert">
+</div>
+
+<div class="card">
+<h3>AR Development</h3>
+<img src="ar.jpg" class="cert">
+</div>
+
+<div class="card">
+<h3>Full Stack Development</h3>
+<img src="fullstack.jpg" class="cert">
+</div>
+
+<div class="card">
+<h3>NPTEL Ethics</h3>
+<img src="nptel.jpg" class="cert">
+</div>
+
+<div class="card">
+<h3>Google Cloud Skills</h3>
+<img src="gcop.png" class="cert">
+<a href="https://www.skills.google/public_profiles/ee747e8c-675f-4d44-9e05-d6a399c62675" class="btn">View Profile</a>
+</div>
+
+</div>
+
+</section>
+
+<!-- POETRY -->
+
+<section id="poetry" class="page section">
+
+<h2>Poetry Achievements</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>33rd Rank National Poetry Contest</h3>
+<img src="poetry33.jpeg" class="cert">
+</div>
+
+<div class="card">
+<h3>45th Rank National Poetry Contest</h3>
+<img src="poetry45.jpeg" class="cert">
+</div>
+
+<div class="card">
+<h3>First Position University Recitation</h3>
+<img src="poetry1.jpeg" class="cert">
+</div>
+
+<div class="card">
+<h3>Second Position University Recitation</h3>
+<img src="poetry2.jpeg" class="cert">
+</div>
+
+</div>
+
+<br>
+
+<a href="https://sanchayutkarsh.blogspot.com" class="btn">Visit Poetry Blog</a>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="page section">
+
+<h2>Contact</h2>
+
+<p>
+Email:
+<a href="mailto:uttu3101@gmail.com">uttu3101@gmail.com</a>
+</p>
+
+<p>
+LinkedIn:
+<a href="https://linkedin.com/in/utkarsh-tiwari-930642211">linkedin.com/in/utkarsh-tiwari-930642211</a>
+</p>
+
+</section>
+
+<!-- IMAGE MODAL -->
+
+<div id="modal">
+<img id="modal-img">
+</div>
+
+<script>
+
+function showPage(page){
+
+ document.querySelectorAll('.page').forEach(section=>{
+ section.style.display='none'
+ })
+
+ document.getElementById(page).style.display='block'
+ window.scrollTo(0,0)
+}
+
+showPage('home')
+
+const modal=document.getElementById('modal')
+const modalImg=document.getElementById('modal-img')
+
+document.querySelectorAll('.cert').forEach(img=>{
+ img.onclick=()=>{
+ modal.style.display='flex'
+ modalImg.src=img.src
+ }
+})
+
+modal.onclick=()=>{modal.style.display='none'}
+
+</script>
+
+</body>
+</html>
