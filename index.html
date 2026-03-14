@@ -2,38 +2,47 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Utkarsh | Portfolio</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 body{
-font-family:'Inter',sans-serif;
-margin:0;
-color:white;
+font-family:Inter;
 background:linear-gradient(-45deg,#020617,#0f172a,#1e293b,#020617);
 background-size:400% 400%;
 animation:bgMove 12s ease infinite;
+color:white;
+scroll-behavior:smooth;
 }
 
 @keyframes bgMove{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+
+.section{
+max-width:1100px;
+margin:auto;
+padding:90px 20px;
 }
 
 .nav{
 position:fixed;
 top:0;
 width:100%;
-background:rgba(0,0,0,.6);
+background:rgba(0,0,0,.5);
 backdrop-filter:blur(10px);
 border-bottom:1px solid rgba(255,255,255,.05);
-z-index:100;
+z-index:50;
 }
 
 .nav-inner{
@@ -46,58 +55,34 @@ padding:14px 20px;
 }
 
 .nav a{
-color:#cbd5f5;
-text-decoration:none;
 margin-left:18px;
+color:#cbd5f5;
 font-size:14px;
-cursor:pointer;
 }
 
 .nav a:hover{color:white}
 
-.section{
-max-width:1100px;
-margin:auto;
-padding:120px 20px 80px;
-}
-
 .hero{
 display:flex;
 flex-wrap:wrap;
-gap:40px;
 align-items:center;
 justify-content:center;
+gap:40px;
 }
 
 .hero img{
-width:260px;
+width:250px;
 border-radius:50%;
 box-shadow:0 0 60px rgba(37,99,235,.6);
 }
 
-.btn{
-display:inline-block;
-margin-top:20px;
-background:linear-gradient(135deg,#2563eb,#4f46e5);
-padding:12px 20px;
-border-radius:10px;
-text-decoration:none;
-color:white;
-transition:.3s;
-}
-
-.btn:hover{
-transform:translateY(-2px);
-box-shadow:0 10px 25px rgba(37,99,235,.6);
-}
-
 .card{
-background:rgba(15,27,46,.65);
+background:rgba(15,27,46,0.65);
 backdrop-filter:blur(14px);
 border-radius:18px;
-padding:25px;
+padding:28px;
 border:1px solid rgba(255,255,255,.05);
-transition:.3s;
+transition:.35s;
 }
 
 .card:hover{
@@ -111,6 +96,17 @@ grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:25px;
 }
 
+.btn{
+display:inline-block;
+margin-top:18px;
+background:linear-gradient(135deg,#2563eb,#4f46e5);
+padding:10px 18px;
+border-radius:10px;
+font-size:14px;
+}
+
+.btn:hover{transform:scale(1.05)}
+
 .cert{
 width:100%;
 height:220px;
@@ -120,8 +116,6 @@ padding:10px;
 border-radius:12px;
 cursor:pointer;
 }
-
-.page{display:none}
 
 #modal{
 display:none;
@@ -133,16 +127,17 @@ height:100%;
 background:rgba(0,0,0,.9);
 align-items:center;
 justify-content:center;
-z-index:999;
+z-index:100;
 }
 
 #modal img{
 max-width:90%;
 max-height:90%;
-border-radius:10px;
+border-radius:12px;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -150,38 +145,45 @@ border-radius:10px;
 <!-- NAVBAR -->
 
 <div class="nav">
+
 <div class="nav-inner">
+
 <b>Utkarsh</b>
+
 <div>
-<a onclick="showPage('home')">Home</a>
-<a onclick="showPage('about')">About</a>
-<a onclick="showPage('research')">Research</a>
-<a onclick="showPage('certifications')">Certifications</a>
-<a onclick="showPage('poetry')">Poetry</a>
-<a onclick="showPage('contact')">Contact</a>
-</div>
-</div>
+
+<a href="#about">About</a>
+<a href="#research">Research</a>
+<a href="#certifications">Certifications</a>
+<a href="#poetry">Poetry</a>
+<a href="#contact">Contact</a>
+
 </div>
 
-<!-- HOME -->
+</div>
 
-<section id="home" class="page section hero">
+</div>
+
+
+<!-- HERO -->
+
+<section class="section hero" style="padding-top:140px">
 
 <img src="me.jpg">
 
-<div>
+<div style="max-width:520px">
 
-<h1 style="font-size:42px">Utkarsh</h1>
+<h1 class="text-5xl font-bold mb-4">Utkarsh</h1>
 
-<p>
+<p class="text-gray-400 mb-3">
 Software Engineer • DevOps • Cloud • AR/VR • Research Author • Poet
 </p>
 
-<p>
-DevOps enthusiast building scalable cloud systems and microservice architectures while publishing research and exploring emerging technologies.
+<p class="text-gray-400">
+DevOps and cloud enthusiast focused on scalable systems and microservice architectures. Author of multiple research publications and explorer of emerging technologies.
 </p>
 
-<a href="cv.pdf" class="btn" download>
+<a href="cv.pdf" download class="btn">
 Download CV
 </a>
 
@@ -189,71 +191,74 @@ Download CV
 
 </section>
 
+
 <!-- ABOUT -->
 
-<section id="about" class="page section">
+<section id="about" class="section">
 
-<h2>Independent Study & Skill Development</h2>
+<h2 class="text-3xl mb-6">Independent Study & Skill Development</h2>
 
 <div class="card">
 
-Since January 2025 I have focused on structured independent learning and research aimed at long term skill development. This period strengthened analytical thinking, research capabilities and systematic problem solving.
+Since January 2025 I have focused on structured independent learning and research aimed at long term skill development. This period strengthened analytical thinking, research capability and systematic problem solving.
 
 </div>
 
 </section>
+
 
 <!-- RESEARCH -->
 
-<section id="research" class="page section">
+<section id="research" class="section">
 
-<h2>Research Publications</h2>
+<h2 class="text-3xl mb-8">Research Publications</h2>
 
 <div class="grid">
 
 <div class="card">
-<h3>Dynamic Container Optimization</h3>
-<p>IEEE • 2024</p>
-<a href="https://doi.org/10.1109/ICEECT61758.2024.10739185" class="btn">View Paper</a>
+<h3 class="text-blue-400">Dynamic Container Optimization</h3>
+<p class="text-gray-400">IEEE • 2024</p>
+<a href="https://doi.org/10.1109/ICEECT61758.2024.10739185" target="_blank" class="btn">View Paper</a>
 </div>
 
 <div class="card">
-<h3>Optimizing Cloud Applications with DevOps</h3>
-<p>IEEE • 2024</p>
-<a href="https://doi.org/10.1109/iccica60014.2024.10584904" class="btn">View Paper</a>
+<h3 class="text-blue-400">Optimizing Cloud Applications with DevOps</h3>
+<p class="text-gray-400">IEEE • 2024</p>
+<a href="https://doi.org/10.1109/iccica60014.2024.10584904" target="_blank" class="btn">View Paper</a>
 </div>
 
 <div class="card">
-<h3>IoT Smart Home Automation</h3>
-<p>Springer • 2024</p>
-<a href="https://doi.org/10.1007/978-981-99-8661-3_28" class="btn">View Paper</a>
+<h3 class="text-blue-400">IoT Smart Home Automation</h3>
+<p class="text-gray-400">Springer • 2024</p>
+<a href="https://doi.org/10.1007/978-981-99-8661-3_28" target="_blank" class="btn">View Paper</a>
 </div>
 
 <div class="card">
-<h3>Optimization Techniques in Business Analytics</h3>
-<p>IGI Global • 2024</p>
-<a href="https://doi.org/10.4018/979-8-3693-1598-9.ch001" class="btn">View Paper</a>
+<h3 class="text-blue-400">Business Analytics Optimization</h3>
+<p class="text-gray-400">IGI Global • 2024</p>
+<a href="https://doi.org/10.4018/979-8-3693-1598-9.ch001" target="_blank" class="btn">View Paper</a>
 </div>
 
 </div>
 
 </section>
 
+
 <!-- CERTIFICATIONS -->
 
-<section id="certifications" class="page section">
+<section id="certifications" class="section">
 
-<h2>Certifications</h2>
+<h2 class="text-3xl mb-8">Certifications</h2>
 
 <div class="grid">
 
 <div class="card">
-<h3>AWS Fargate</h3>
+<h3>AWS Fargate Certification</h3>
 <img src="aws.jpg" class="cert">
 </div>
 
 <div class="card">
-<h3>AR Development</h3>
+<h3>Augmented Reality Development</h3>
 <img src="ar.jpg" class="cert">
 </div>
 
@@ -277,11 +282,12 @@ Since January 2025 I have focused on structured independent learning and researc
 
 </section>
 
+
 <!-- POETRY -->
 
-<section id="poetry" class="page section">
+<section id="poetry" class="section">
 
-<h2>Poetry Achievements</h2>
+<h2 class="text-3xl mb-8">Poetry & Literary Achievements</h2>
 
 <div class="grid">
 
@@ -309,29 +315,33 @@ Since January 2025 I have focused on structured independent learning and researc
 
 <br>
 
-<a href="https://sanchayutkarsh.blogspot.com" class="btn">Visit Poetry Blog</a>
+<a href="https://sanchayutkarsh.blogspot.com" class="btn">Visit My Poetry Blog</a>
 
 </section>
+
 
 <!-- CONTACT -->
 
-<section id="contact" class="page section">
+<section id="contact" class="section text-center">
 
-<h2>Contact</h2>
+<h2 class="text-3xl mb-6">Contact</h2>
 
 <p>
-Email:
-<a href="mailto:uttu3101@gmail.com">uttu3101@gmail.com</a>
+Email: <a href="mailto:uttu3101@gmail.com" class="text-blue-400">uttu3101@gmail.com</a>
 </p>
 
-<p>
-LinkedIn:
-<a href="https://linkedin.com/in/utkarsh-tiwari-930642211">linkedin.com/in/utkarsh-tiwari-930642211</a>
+<p class="mt-2">
+LinkedIn: <a href="https://linkedin.com/in/utkarsh-tiwari-930642211" class="text-blue-400">linkedin.com/in/utkarsh-tiwari-930642211</a>
 </p>
 
 </section>
 
-<!-- IMAGE MODAL -->
+<footer class="text-center pb-10 text-gray-500">
+© 2026 Utkarsh
+</footer>
+
+
+<!-- CERTIFICATE MODAL -->
 
 <div id="modal">
 <img id="modal-img">
@@ -339,29 +349,21 @@ LinkedIn:
 
 <script>
 
-function showPage(page){
-
- document.querySelectorAll('.page').forEach(section=>{
- section.style.display='none'
- })
-
- document.getElementById(page).style.display='block'
- window.scrollTo(0,0)
-}
-
-showPage('home')
-
 const modal=document.getElementById('modal')
 const modalImg=document.getElementById('modal-img')
 
 document.querySelectorAll('.cert').forEach(img=>{
- img.onclick=()=>{
- modal.style.display='flex'
- modalImg.src=img.src
- }
+
+img.onclick=()=>{
+modal.style.display='flex'
+modalImg.src=img.src
+}
+
 })
 
-modal.onclick=()=>{modal.style.display='none'}
+modal.onclick=()=>{
+modal.style.display='none'
+}
 
 </script>
 
