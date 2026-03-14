@@ -61,6 +61,78 @@ font-size:14px;
 
 .nav a:hover{color:white}
 
+.navbar{
+width:100%;
+padding:20px 60px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:fixed;
+top:0;
+background:rgba(5,11,24,0.8);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+.logo{
+font-weight:600;
+font-size:20px;
+}
+
+.nav-links{
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#9ca3af;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:#3b82f6;
+}
+
+.hamburger{
+display:none;
+flex-direction:column;
+cursor:pointer;
+gap:5px;
+}
+
+.hamburger span{
+width:25px;
+height:3px;
+background:white;
+display:block;
+}
+
+@media(max-width:768px){
+
+.nav-links{
+position:absolute;
+top:70px;
+right:0;
+background:#0f172a;
+flex-direction:column;
+width:220px;
+padding:20px;
+display:none;
+}
+
+.nav-links.active{
+display:flex;
+}
+
+.hamburger{
+display:flex;
+}
+
+}
+
+  
 .hero{
 display:flex;
 flex-wrap:wrap;
@@ -201,10 +273,10 @@ border-radius:12px;
 
 <div>
 
-<a href="#about">About</a>
-<a href="#research">Research</a>
-<a href="#certifications">Certifications</a>
-<a href="#poetry">Poetry</a>
+<a href="#about">About | </a>
+<a href="#research">Research | </a>
+<a href="#certifications">Certifications | </a>
+<a href="#poetry">Poetry | </a>
 <a href="#contact">Contact</a>
 
 </div>
@@ -212,6 +284,29 @@ border-radius:12px;
 </div>
 
 </div>
+
+  <nav class="navbar">
+
+<div class="logo">Utkarsh - Portfolio</div>
+
+<ul class="nav-links" id="navLinks">
+
+<li><a href="#about">About</a></li>
+<li><a href="#research">Research</a></li>
+<li><a href="#certifications">Certifications</a></li>
+<li><a href="#poetry">Poetry</a></li>
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+<div class="hamburger" onclick="toggleMenu()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+</nav>
+
 
 
 <!-- HERO -->
@@ -434,6 +529,17 @@ modalImg.src=img.src
 
 modal.onclick=()=>{
 modal.style.display='none'
+}
+
+</script>
+<script>
+
+function toggleMenu(){
+
+document
+.getElementById("navLinks")
+.classList.toggle("active");
+
 }
 
 </script>
