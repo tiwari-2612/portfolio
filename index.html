@@ -98,7 +98,13 @@ box-shadow:0 10px 25px rgba(37,99,235,0.5);
 
 <span class="font-semibold text-lg">Utkarsh</span>
 
-<div class="space-x-6 text-sm text-gray-300">
+<!-- Hamburger button -->
+<button id="menu-btn" class="md:hidden text-2xl">
+☰
+</button>
+
+<!-- Desktop Menu -->
+<div class="hidden md:flex space-x-6 text-sm text-gray-300">
 
 <a href="#research" class="hover:text-white">Research</a>
 <a href="#certifications" class="hover:text-white">Certifications</a>
@@ -107,6 +113,17 @@ box-shadow:0 10px 25px rgba(37,99,235,0.5);
 <a href="https://sanchayutkarsh.blogspot.com/" target="_blank" class="hover:text-white">Poetry Blog</a>
 
 </div>
+
+</div>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden flex-col text-center text-gray-300 pb-4 md:hidden">
+
+<a href="#research" class="py-2 hover:text-white">Research</a>
+<a href="#certifications" class="py-2 hover:text-white">Certifications</a>
+<a href="#poetry" class="py-2 hover:text-white">Poetry</a>
+<a href="#contact" class="py-2 hover:text-white">Contact</a>
+<a href="https://sanchayutkarsh.blogspot.com/" target="_blank" class="py-2 hover:text-white">Poetry Blog</a>
 
 </div>
 
@@ -410,6 +427,16 @@ modal.style.display="none";
 
 </script>
 
+  <script>
+
+const btn = document.getElementById("menu-btn");
+const menu = document.getElementById("mobile-menu");
+
+btn.addEventListener("click", () => {
+menu.classList.toggle("hidden");
+});
+
+</script>
 
 </body>
 </html>
